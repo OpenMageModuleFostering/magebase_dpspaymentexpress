@@ -1,0 +1,40 @@
+<?php
+/**
+ * MageBase DPS Payment Express
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with Magento in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    MageBase
+ * @package     MageBase_DpsPaymentExpress
+ * @author      Kristof Ringleff
+ * @copyright   Copyright (c) 2010 MageBase (http://www.magebase.com)
+ * @copyright   Copyright (c) 2010 Fooman Ltd (http://www.fooman.co.nz)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<p><?php echo $this->getMethod()->getTitle() ?></p>
+<table width="100%"  border="0">
+    <tr><td width="45%" class="label"><?php echo $this->__('Card Type') ?></td><td><?php echo $this->getAdditionalData('CardName') ?></td>
+    <tr><td width="45%" class="label"><?php echo $this->__('Name on Card') ?></td><td><?php echo $this->getAdditionalData('CardHolderName') ?></td>
+    <tr><td width="45%" class="label"><?php echo $this->__('Amount Settled') ?></td><td><?php echo $this->getAdditionalData('AmountSettlement') ?></td>
+    <tr><td width="45%" class="label"><?php echo $this->__('Settlement Currency') ?></td><td><?php echo $this->getAdditionalData('CurrencySettlement') ?></td>
+</table>
+<p id="magebasedps_txn_click"><a href="#"><span onclick="$$('#magebasedps_txn_details').first().show(); $$('#magebasedps_txn_click').first().hide();return false;">click to view transaction details</span></a</p>
+<div id="magebasedps_txn_details" style="display:none;">
+    <table width="100%" border="0">
+        <tr><td width="45%" class="label"><?php echo $this->__('CardNumber') ?></td><td><?php echo $this->getAdditionalData('CardNumber') ?></td>
+        <tr><td width="45%" class="label"><?php echo $this->__('Authentication Code') ?></td><td><?php echo $this->getAdditionalData('AuthCode') ?></td>
+        <tr><td width="45%" class="label"><?php echo $this->__('Transaction Type') ?></td><td><?php echo $this->getAdditionalData('TxnType') ?></td>
+        <tr><td width="45%" class="label"><?php echo $this->__('Transaction Id') ?></td><td><?php echo $this->getAdditionalData('TxnId') ?></td>
+        <tr><td width="45%" class="label"><?php echo $this->__('DPS Transaction Reference') ?></td><td><?php echo $this->getAdditionalData('DpsTxnRef') ?></td>
+        <tr><td width="45%" class="label"><?php echo $this->__('Response Text') ?></td><td><?php echo $this->getAdditionalData('ResponseText') ?></td>
+    </table>
+</div>
