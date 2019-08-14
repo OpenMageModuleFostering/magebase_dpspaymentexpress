@@ -21,13 +21,7 @@
  */
 ?>
 <p><?php echo $this->getMethod()->getTitle() ?></p>
-<?php if($this->getAdditionalData('CardName')) :?>
-    <table width="100%" border="0">
-    <tr><td width="35%"><?php echo $this->__('Card Type') ?></td><td><?php echo $this->getAdditionalData('CardName') ?></td>
-    <?php if($this->getAdditionalData('CardHolderName')) :?>
-        <tr><td width="35%"><?php echo $this->__('Name on Card') ?></td><td><?php echo $this->getAdditionalData('CardHolderName') ?></td>
-    <?php endif;?>
-    </table>
-<?php else:?>
-<img src="<?php echo $this->getSkinUrl('images/magebase/dps/dpslogo.png'); ?>" alt="" />
-<?php endif;?>
+<table width="100%" border="0">
+<tr><td width="35%"><?php echo $this->__('Card Type') ?></td><td><?php echo $this->getAdditionalData('CardName') ?></td>
+<tr><td width="35%"><?php echo $this->__('Name on Card') ?></td><td><?php echo $this->getAdditionalData('CardHolderName') ?></td>
+</table>
