@@ -208,9 +208,8 @@ class MageBase_DpsPaymentExpress_Model_Method_Pxpay extends Mage_Payment_Model_M
      * @param string $result [encrypted]
      * @return SimpleXMLElement
      */
-    public function processFailResponse($result)
-    {
-        if (!$this->_isActive()) {
+    public function processFailResponse($result) {
+        if(!$this->_isActive()) {
             throw new Exception("Payment method is not available.");
         }
         $responseXml = $this->getRealResponse($result);
@@ -452,6 +451,7 @@ class MageBase_DpsPaymentExpress_Model_Method_Pxpay extends Mage_Payment_Model_M
                 'ResponseText' => (string)$responseXml->ResponseText
         );
         $payment->setAdditionalData(serialize($data));
+
     }
 
     /**
@@ -505,8 +505,7 @@ class MageBase_DpsPaymentExpress_Model_Method_Pxpay extends Mage_Payment_Model_M
             $order = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId());
         }
         if ($order->getId() && $order->getState() != Mage_Sales_Model_Order::STATE_CANCELED) {
-            $order->registerCancellation(Mage::helper('magebasedps')->__('There has been an error processing your payment. Please try later or contact us for help.'), false)
-                  ->save();
+            $order->cancel()->save();
         }
     }
 
