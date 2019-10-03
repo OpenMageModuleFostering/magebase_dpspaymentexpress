@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/MageBase_DpsPaymentExpress",
+    "name": "OpenMageModuleFostering\/MageBase_DpsPaymentExpress",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "Accept credit card payments via Payment Express from DPS - this extension supports PxPay and PxPost.",
     "authors": [
-    {
-        "name": "Kristof Ringleff",
-        "email": "info@magebase.com"
-    }
-],
+        {
+            "name": "Kristof Ringleff",
+            "email": "info@magebase.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
